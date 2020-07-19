@@ -1,0 +1,61 @@
+{% extends 'zahradeen/base.html' %}
+
+{% block content %}
+
+   <div class="intro intro-single route bg-image" style="background-image: url(assets/img/overlay-bg.jpg)">
+      <div class="overlay-mf"></div>
+      <div class="intro-content display-table">
+         <div class="table-cell">
+         <div class="container">
+            <h1 class="intro-title">Project Detail</h1>
+            <ol class="breadcrumb d-flex justify-content-center">
+               <li class="breadcrumb-item">
+               <a href="{% url 'home-page' %}">Home</a>
+               </li>
+               <li class="breadcrumb-item active">{{portfolio.name}}</li>
+            </ol>
+         </div>
+         </div>
+      </div>
+   </div>
+
+   <main id="main">
+
+      <!-- ======= Portfolio Details Section ======= -->
+      <section class="portfolio-details">
+         <div class="container">
+
+            <div class="portfolio-details-container">
+
+               <div class="owl-carousel portfolio-details-carousel">
+                  {% for img in images %}
+
+                     <img src="{{img.image.url}}" class="img-fluid" alt="">
+
+                  {% endfor %}
+               </div>
+
+               <div class="portfolio-info">
+                  <h3>Project information</h3>
+                  <ul>
+                     <li><strong>Category</strong>: {{portfolio.category}}</li>
+                     <li><strong>Client</strong>: {{portfolio.client}}</li>
+                     <li><strong>Project date</strong>: {{ portfolio.created|date:"M d, Y" }}</li>
+                     <li><strong>Project URL</strong>: <a href="#">{{portfolio.page_url}}</a></li>
+                  </ul>
+               </div>
+
+            </div>
+
+            <div class="portfolio-description">
+               <h2>{{portfolio.long_title}}</h2>
+               <p>
+                  {{portfolio.description|safe}}
+               </p>
+            </div>
+         </div>
+      </section><!-- End Portfolio Details Section -->
+
+   </main><!-- End #main -->
+
+{% endblock %}
