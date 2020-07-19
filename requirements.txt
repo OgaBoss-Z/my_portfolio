@@ -1,1 +1,11 @@
-
+asgiref==3.2.10
+Django==3.0.8
+django-ckeditor==5.9.0
+django-js-asset==1.2.2
+docutils==0.16
+mysqlclient==2.0.1
+Pillow==7.2.0
+psycopg2==2.8.5
+pytz==2020.1
+six==1.15.0
+sqlparse==0.3.1
